@@ -6,7 +6,7 @@ async function status(request, response) {
   /*  response.json({ status: "Vraaau LoL" }); */
 
   const result = await database.query("SELECT 1 + 1 as sum;");
-  console.log("🍄 >>>>>>> status >>>>>> result::", result.rows);
+  console.log("🍄 >>>>>>> status >>>>>> result:", result.rows);
 
   response.status(200).json({ status: "Vraaau LoL" });
 }
