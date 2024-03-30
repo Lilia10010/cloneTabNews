@@ -1,7 +1,7 @@
-import database from "../../../../infra/database.js";
+import database from "infra/database.js";
 
 async function status(request, response) {
-  console.log("🍄 >>>>>>> database:", database);
+  console.log("🍄 >>>>>>> database", database);
   /*  response.status(200).send("Vraaau LoL"); */
   /*  response.json({ status: "Vraaau LoL" }); */
 
