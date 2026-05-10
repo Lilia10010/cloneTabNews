@@ -1,6 +1,6 @@
 import database from "infra/database";
 
-database.query("SELECT 1+1;");
+//database.query("SELECT 1+1;");
 
 beforeAll(cleanDatabase);
 async function cleanDatabase() {
