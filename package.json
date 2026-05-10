@@ -13,7 +13,12 @@
     "services:stop": "sudo docker compose -f infra/compose.yaml stop",
     "services:down": "sudo docker compose -f infra/compose.yaml down",
     "migration:create": "node-pg-migrate -m infra/migrations create",
-    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up"
+    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
+    "check-node-version": "node -e \"const fs=require('fs');const required=fs.readFileSync('.nvmrc','utf8').trim();const actual=process.version.slice(1);if(actual!==required){console.warn('WARNING: node version mismatch: required',required,'but running',actual);}else{console.log('Node version ok',actual);}\"",
+    "postinstall": "npm run check-node-version"
+  },
+  "engines": {
+    "node": "24.14.1"
   },
   "author": "",
   "license": "MIT",
